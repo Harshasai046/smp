@@ -1,0 +1,27 @@
+{% extends 'panel.html' %}
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>File_id</th>
+            <th>File_Name</th>
+            <th>Created_at</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+</table>
+<table>
+    <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+            <td><a href="{{url_for('view_file',fid=i[0])}}">View</a></td>
+            <td><a href="#">Downolad</a></td>
+            <td><a href="#">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
